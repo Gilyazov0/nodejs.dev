@@ -260,11 +260,11 @@ function sendOneMillionEmailsOnly() {
       if (!recipient || successCount >= 1000000) return final();
       dispatch(recipient, function (_err) {
         if (!_err) successCount += 1;
-        serial(bigList.shift());
+        serial(bigList.pop());
       });
     }
 
-    serial(bigList.shift());
+    serial(bigList.pop());
   });
 }
 
